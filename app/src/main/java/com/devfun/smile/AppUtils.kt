@@ -30,7 +30,7 @@ class AppUtils private constructor() {
     fun sendMail(context: Context) {
         val intent = Intent(Intent.ACTION_SEND)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("hoangleduchoang89@gmail.com"));
+        intent.putExtra(Intent.EXTRA_EMAIL, arrayOf("devfun052017@gmail.com"));
         intent.setType("text/plain")
         intent.putExtra(Intent.EXTRA_SUBJECT, "Smile Feedback!");
         context.startActivity(Intent.createChooser(intent, "Send mail..."));
