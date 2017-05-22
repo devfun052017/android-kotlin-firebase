@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_zing"
+            android:title="@string/nav_zing_vn"/>
+        <item
+            android:id="@+id/nav_express"
+            android:title="@string/nav_vnexpress_net"/>
+    </group>
+    <item android:title="@string/nav_other">
+        <menu>
+            <item
+                android:id="@+id/nav_feedback"
+                android:title="@string/nav_feedback"/>
+            <item
+                android:id="@+id/nav_share"
+                android:title="Share with Facebook"/>
+        </menu>
+    </item>
+</menu>

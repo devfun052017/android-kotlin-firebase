@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Smile</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="nav_feedback">Feedback</string>
+    <string name="nav_other">Other</string>
+    <string name="nav_vnexpress_net">VNExpress.net</string>
+    <string name="nav_zing_vn">Zing.vn</string>
+</resources>
