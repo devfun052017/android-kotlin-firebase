@@ -6,9 +6,8 @@ import com.google.firebase.FirebaseApp
 /**
  * *******************************************
  * * Created by Simon on 5/8/17.            **
- * * Copyright (c) 2015 by AppsCyclone      **
+ * * Copyright (c) 2015 by DevFun           **
  * * All rights reserved                    **
- * * http://appscyclone.com/                **
  * *******************************************
  */
 

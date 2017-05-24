@@ -5,9 +5,8 @@ import java.io.Serializable
 /**
  * *******************************************
  * * Created by Simon on 5/9/17.            **
- * * Copyright (c) 2015 by AppsCyclone      **
+ * * Copyright (c) 2015 by DevFun           **
  * * All rights reserved                    **
- * * http://appscyclone.com/                **
  * *******************************************
  */
 
