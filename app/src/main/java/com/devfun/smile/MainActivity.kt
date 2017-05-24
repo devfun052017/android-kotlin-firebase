@@ -2,6 +2,7 @@ package com.devfun.smile
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
@@ -12,6 +13,7 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.devfun.smile.utils.AppUtils
+import com.google.android.gms.ads.AdRequest
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -41,6 +43,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setTitle("Zing.vn")
         loadNews(mNavSource)
         AppUtils.instance.printHashKey(this)
+        //
+        initAdsView()
     }
 
     private fun setupRecyclerView() {
@@ -48,6 +52,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         mRecyclerView!!.layoutManager = LinearLayoutManager(applicationContext)
         mAdapter = NewsAdapter()
         mRecyclerView!!.adapter = mAdapter
+    }
+
+    private fun initAdsView(){
+        val adRequest = AdRequest.Builder()
+        if(BuildConfig.DEBUG){
+            adRequest.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+            adRequest.addTestDevice(Settings.Secure.getString(contentResolver,
+                    Settings.Secure.ANDROID_ID))
+        }
+        adView.loadAd(adRequest.build())
     }
 
     override fun onBackPressed() {
