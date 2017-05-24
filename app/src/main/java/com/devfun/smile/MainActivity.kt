@@ -1,5 +1,6 @@
 package com.devfun.smile
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -13,6 +14,7 @@ import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.devfun.smile.utils.AppUtils
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -41,6 +43,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setTitle("Zing.vn")
         loadNews(mNavSource)
         AppUtils.instance.printHashKey(this)
+        //
+        appBarMain_imageView_addNews.setOnClickListener {
+            startActivity(Intent(applicationContext, PostNewsActivity::class.java)) }
     }
 
     private fun setupRecyclerView() {
