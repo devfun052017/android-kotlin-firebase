@@ -19,6 +19,7 @@
     <string name="news_from">News from</string>
     <string name="cancel">Cancel</string>
     <string name="add">Add</string>
+    <string name="nav_funny_jokes">Funny jokes from</string>
 
     <string-array name="source">
         <item>zing</item>

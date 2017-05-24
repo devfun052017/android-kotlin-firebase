@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="none">
-        <item
-            android:id="@+id/nav_zing"
-            android:title="@string/nav_zing_vn"/>
-        <item
-            android:id="@+id/nav_express"
-            android:title="@string/nav_vnexpress_net"/>
+    <item android:title="@string/nav_funny_jokes">
+        <menu>
+            <item
+                android:id="@+id/nav_zing"
+                android:title="@string/nav_zing_vn"/>
+            <item
+                android:id="@+id/nav_express"
+                android:title="@string/nav_vnexpress_net"/>
 
-        <item
-            android:id="@+id/nav_24h"
-            android:title="@string/nav_24h_com_vn"/>
-    </group>
+            <item
+                android:id="@+id/nav_24h"
+                android:title="@string/nav_24h_com_vn"/>
+        </menu>
+    </item>
     <item android:title="@string/nav_other">
         <menu>
             <item
