@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "829690377912-0lq7vjjl2u125rtgvgfihqcuiidoutl8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devfun.smile",
+            "certificate_hash": "3abe53258b1e73bd148cedcdce466ef3cfc0c329"
+          }
+        },
+        {
           "client_id": "829690377912-t7ei4nccp6vdob2k3m6540ciopcajlsp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

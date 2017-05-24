@@ -8,6 +8,10 @@
         <item
             android:id="@+id/nav_express"
             android:title="@string/nav_vnexpress_net"/>
+
+        <item
+            android:id="@+id/nav_24h"
+            android:title="@string/nav_24h_com_vn"/>
     </group>
     <item android:title="@string/nav_other">
         <menu>
@@ -16,7 +20,7 @@
                 android:title="@string/nav_feedback"/>
             <item
                 android:id="@+id/nav_share"
-                android:title="Share with Facebook"/>
+                android:title="@string/nav_share_with_facebook"/>
         </menu>
     </item>
 </menu>

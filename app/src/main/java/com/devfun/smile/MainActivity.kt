@@ -1,5 +1,6 @@
 package com.devfun.smile
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -10,6 +11,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
+import com.devfun.smile.utils.AppUtils
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -69,11 +71,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 setTitle("VNExpress.net")
                 loadNews("vnexpress")
             }
+            R.id.nav_24h -> {
+                setTitle("24h.com.vn")
+                loadNews("24h")
+            }
             R.id.nav_feedback -> {
                 AppUtils.instance.sendMail(this)
             }
             R.id.nav_share -> {
-
+                startActivity(Intent(applicationContext, PostNewsActivity::class.java))
             }
         }
 

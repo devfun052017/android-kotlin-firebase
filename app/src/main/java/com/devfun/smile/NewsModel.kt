@@ -1,7 +1,5 @@
 package com.devfun.smile
 
-import android.os.Parcel
-import android.os.Parcelable
 import java.io.Serializable
 
 /**
@@ -15,10 +13,11 @@ import java.io.Serializable
 
 class NewsModel : Serializable{
 
-    var title: String? = null
-    var short_description: String? = null
-    var description: String? = null
-    var image: String? = null
-    var posted: String? = null
-    var type: String? = null
+    var title: String? = ""
+    var short_description: String? = ""
+    var description: String? = ""
+    var image: String? = ""
+    var posted: String? = ""
+    var type: String? = ""
+
 }

@@ -1,4 +1,4 @@
-package com.devfun.smile
+package com.devfun.smile.utils
 
 import android.content.Context
 import android.content.Intent

@@ -9,4 +9,20 @@
     <string name="nav_other">Other</string>
     <string name="nav_vnexpress_net">VNExpress.net</string>
     <string name="nav_zing_vn">Zing.vn</string>
+    <string name="nav_share_with_facebook">Share with Facebook</string>
+    <string name="nav_24h_com_vn">24h.com.vn</string>
+    <string name="input_full_description">Input full description</string>
+    <string name="input_description">Input description</string>
+    <string name="input_date_posted">Input date posted</string>
+    <string name="input_url_image">Input url image</string>
+    <string name="input_title">Input title</string>
+    <string name="news_from">News from</string>
+    <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+
+    <string-array name="source">
+        <item>zing</item>
+        <item>vnexpress</item>
+        <item>24h</item>
+    </string-array>
 </resources>
