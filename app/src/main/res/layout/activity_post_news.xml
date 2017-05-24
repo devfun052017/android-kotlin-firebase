@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.devfun.smile.PostNewsActivity">
 
@@ -12,14 +12,15 @@
         android:id="@+id/activityPostNews_toolbar_topBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:title="Add News"
-        app:titleTextColor="#ffffff"
+        android:background="@color/colorPrimary"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:background="@color/colorPrimary" />
+        app:title="Add News"
+        app:titleTextColor="#ffffff"/>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:fitsSystemWindows="true"
         android:padding="10dp">
 
@@ -85,8 +86,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:hint="@string/input_description"
-                    android:inputType="textMultiLine"
-                    android:minLines="3"/>
+                    android:inputType="textMultiLine"/>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -99,31 +99,31 @@
                     android:layout_height="wrap_content"
                     android:gravity="start"
                     android:hint="@string/input_full_description"
-                    android:inputType="textMultiLine"
-                    android:minLines="8"/>
+                    android:inputType="textMultiLine"/>
             </android.support.design.widget.TextInputLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
-
-                <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/activityPostNews_button_cancel"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="@string/cancel"/>
-
-                <android.support.v7.widget.AppCompatButton
-                    android:id="@+id/activityPostNews_button_submit"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="@string/add"/>
-            </LinearLayout>
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/activityPostNews_button_cancel"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/cancel"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/activityPostNews_button_submit"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/add"/>
+    </LinearLayout>
 </LinearLayout>
