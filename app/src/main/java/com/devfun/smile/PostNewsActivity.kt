@@ -17,7 +17,6 @@ class PostNewsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_post_news)
         setSupportActionBar(activityPostNews_toolbar_topBar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        activityPostNews_button_cancel.setOnClickListener { onBackPressed() }
         activityPostNews_button_submit.setOnClickListener { saveNews() }
     }
 

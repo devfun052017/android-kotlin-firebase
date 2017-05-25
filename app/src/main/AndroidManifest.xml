@@ -36,7 +36,11 @@
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait">
-
+        </activity>
+        <activity
+            android:name=".ShowFullAdsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_show_full_ads">
         </activity>
     </application>
 

@@ -11,16 +11,20 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
+import android.view.View
 import com.devfun.smile.utils.AppUtils
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private var mRecyclerView: RecyclerView? = null
     private var mAdapter: NewsAdapter? = null
     private var mNavSource: String = "zing";
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +48,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setTitle("Zing.vn")
         loadNews(mNavSource)
         AppUtils.instance.printHashKey(this)
+        //
+        handleAddNews()
+    }
+
+    private fun handleAddNews() {
+        appBarMain_imageView_addNews.setOnClickListener {
+            startActivity(Intent(applicationContext,
+                    PostNewsActivity::class.java))
+        }
+        if (BuildConfig.DEBUG) {
+            appBarMain_imageView_addNews.visibility = View.VISIBLE
+        } else {
+            appBarMain_imageView_addNews.visibility = View.GONE
+        }
     }
 
     private fun setupRecyclerView() {
@@ -89,7 +107,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 AppUtils.instance.sendMail(this)
             }
             R.id.nav_share -> {
-                startActivity(Intent(applicationContext, PostNewsActivity::class.java))
+
             }
         }
 
@@ -119,5 +137,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         override fun onCancelled(databaseError: DatabaseError) {
             contentMain_swipeRefreshLayout_refresh.isRefreshing = false
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adView.resume()
+    }
+
+    override fun onPause() {
+        adView.pause()
+        super.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        adView.destroy()
+        startActivity(Intent(applicationContext, ShowFullAdsActivity::class.java))
+        super.onDestroy()
     }
 }

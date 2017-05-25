@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Smile</string>
-
+    <string name="app_name">Funny Jokes</string>
+    <string name="ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="ad_interstitial_id">ca-app-pub-1212764931474732/2482605606</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -25,4 +26,8 @@
         <item>vnexpress</item>
         <item>24h</item>
     </string-array>
+
+    <string name="title_activity_show_full_ads">ShowFullAdsActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
