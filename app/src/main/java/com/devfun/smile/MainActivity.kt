@@ -155,6 +155,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onDestroy() {
         adView.destroy()
+
         startActivity(Intent(applicationContext, ShowFullAdsActivity::class.java))
         super.onDestroy()
     }

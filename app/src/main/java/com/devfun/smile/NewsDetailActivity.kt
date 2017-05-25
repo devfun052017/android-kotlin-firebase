@@ -18,10 +18,10 @@ class NewsDetailActivity : AppCompatActivity() {
         Glide.with(applicationContext)
                 .load(news.image)
                 .into(newsDetail_imageView_imageHeader)
-        newsDetail_textView_title.text = news.title
-        newsDetail_textView_posted.text = news.posted
-        newsDetail_textView_shortDescription.text = news.short_description
-        newsDetail_textView_description.text = Html.fromHtml(news.description)
+        newsDetail_textView_title.text = news.title!!.trim().replace("\n", "")
+        newsDetail_textView_posted.text = news.posted!!.trim().replace("\n", "")
+        newsDetail_textView_shortDescription.text = news.short_description!!.trim().replace("\n", "")
+        newsDetail_textView_description.text = Html.fromHtml(news.description!!.trim().replace("\n", ""))
     }
 
     override fun onSupportNavigateUp(): Boolean {

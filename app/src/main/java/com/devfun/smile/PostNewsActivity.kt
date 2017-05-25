@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
 import android.widget.Toast
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_post_news.*
 
 class PostNewsActivity : AppCompatActivity() {
@@ -36,14 +33,18 @@ class PostNewsActivity : AppCompatActivity() {
                 }
 
                 override fun onDataChange(p0: DataSnapshot?) {
-                    val lastItem = p0?.childrenCount
-                    source.child(String.format("%d", lastItem))
-                            .setValue(item) { p0, p1 ->
+                    val root = object : GenericTypeIndicator<ArrayList<NewsModel>>() {}
+                    var news = p0!!.getValue(root)
+                    if (news == null) {
+                        news = ArrayList()
+                    }
+                    news.add(0, item)
+                    source.setValue(news) { p0, p1 ->
                                 if (p0 != null) {
                                     Toast.makeText(applicationContext,
                                             "Can not create this news. Please try again.",
                                             Toast.LENGTH_LONG).show()
-                                }else{
+                                } else {
                                     clearText()
                                 }
                             }

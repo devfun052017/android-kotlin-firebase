@@ -49,7 +49,9 @@
                 android:layout_marginTop="3dp"
                 android:text="09/05/2017"
                 android:textColor="#80000000"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+                android:lines="1"
+                android:ellipsize="end"/>
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/newsItems_textView_shortDescription"

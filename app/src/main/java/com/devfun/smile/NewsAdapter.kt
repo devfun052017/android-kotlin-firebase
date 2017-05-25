@@ -49,9 +49,9 @@ internal class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() 
             Glide.with(itemView.context)
                     .load(newsModel.image)
                     .into(itemView.newsItems_imageView_image)
-            itemView.newsItems_textView_title.text = newsModel.title
-            itemView.newsItems_textView_createdDate.text = newsModel.posted
-            itemView.newsItems_textView_shortDescription.text = newsModel.short_description
+            itemView.newsItems_textView_title.text = newsModel.title!!.trim().replace("\n", "")
+            itemView.newsItems_textView_createdDate.text = newsModel.posted!!.trim().replace("\n", "")
+            itemView.newsItems_textView_shortDescription.text = newsModel.short_description!!.trim().replace("\n", "")
         }
     }
 
