@@ -2,7 +2,6 @@ package com.devfun.smile
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
@@ -14,6 +13,7 @@ import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.devfun.smile.utils.AppUtils
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initAdsView()
         //register refresh item
         contentMain_swipeRefreshLayout_refresh.setOnRefreshListener { loadNews(mNavSource) }
         val toolbar = findViewById(R.id.toolbar) as Toolbar
@@ -43,8 +44,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setTitle("Zing.vn")
         loadNews(mNavSource)
         AppUtils.instance.printHashKey(this)
-        //
-        initAdsView()
     }
 
     private fun setupRecyclerView() {
@@ -54,14 +53,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         mRecyclerView!!.adapter = mAdapter
     }
 
-    private fun initAdsView(){
-        val adRequest = AdRequest.Builder()
-        if(BuildConfig.DEBUG){
-            adRequest.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-            adRequest.addTestDevice(Settings.Secure.getString(contentResolver,
-                    Settings.Secure.ANDROID_ID))
-        }
-        adView.loadAd(adRequest.build())
+    private fun initAdsView() {
+        MobileAds.initialize(this, "ca-app-pub-1212764931474732~9506344803")
+        val request = AdRequest.Builder()
+                .build()
+        adView.loadAd(request)
     }
 
     override fun onBackPressed() {

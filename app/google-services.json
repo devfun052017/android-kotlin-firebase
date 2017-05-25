@@ -1,43 +1,35 @@
 {
   "project_info": {
-    "project_number": "829690377912",
-    "firebase_url": "https://smile-1a776.firebaseio.com",
-    "project_id": "smile-1a776",
-    "storage_bucket": "smile-1a776.appspot.com"
+    "project_number": "1061876202658",
+    "firebase_url": "https://funny-jokes-239b4.firebaseio.com",
+    "project_id": "funny-jokes-239b4",
+    "storage_bucket": "funny-jokes-239b4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:829690377912:android:413ee055e0a9bdb2",
+        "mobilesdk_app_id": "1:1061876202658:android:e6e53174ac08cdae",
         "android_client_info": {
-          "package_name": "com.devfun.smile"
+          "package_name": "com.devfun.funnyjokes"
         }
       },
       "oauth_client": [
         {
-          "client_id": "829690377912-0lq7vjjl2u125rtgvgfihqcuiidoutl8.apps.googleusercontent.com",
+          "client_id": "1061876202658-dcs2423gl3s79a287sooej83i6q9aciu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.devfun.smile",
-            "certificate_hash": "3abe53258b1e73bd148cedcdce466ef3cfc0c329"
+            "package_name": "com.devfun.funnyjokes",
+            "certificate_hash": "a04a05b676e2f36d76cce0d7a022ad77b7142ffa"
           }
         },
         {
-          "client_id": "829690377912-t7ei4nccp6vdob2k3m6540ciopcajlsp.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.devfun.smile",
-            "certificate_hash": "c724df12ae2af7b1b7a3acb7265b91bbef07f463"
-          }
-        },
-        {
-          "client_id": "829690377912-678eu6vjjsqn93gomto7siplo1p8h777.apps.googleusercontent.com",
+          "client_id": "1061876202658-ipvtb29ocn968eqp77293cqfe1hm0gd5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDidg8a1YdAq2Dv1S0zmgkU1zzSVT5iniA"
+          "current_key": "AIzaSyAYZQ3JJ-T4u4si4o0pejYX89qhiRLG8Dc"
         }
       ],
       "services": {
@@ -48,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "829690377912-678eu6vjjsqn93gomto7siplo1p8h777.apps.googleusercontent.com",
+              "client_id": "1061876202658-ipvtb29ocn968eqp77293cqfe1hm0gd5.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

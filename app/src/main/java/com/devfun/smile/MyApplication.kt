@@ -1,7 +1,6 @@
 package com.devfun.smile
 
 import android.app.Application
-import com.google.android.gms.ads.MobileAds
 import com.google.firebase.FirebaseApp
 
 /**
@@ -17,7 +16,6 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         FirebaseApp.initializeApp(this)
-        MobileAds.initialize(this, "ca-app-pub-1212764931474732~2851035604")
     }
 
 
