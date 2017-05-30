@@ -6,11 +6,11 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="nav_feedback">Feedback</string>
-    <string name="nav_other">Other</string>
+    <string name="nav_feedback">Phẩn hồi</string>
+    <string name="nav_other">Khác</string>
     <string name="nav_vnexpress_net">VNExpress.net</string>
     <string name="nav_zing_vn">Zing.vn</string>
-    <string name="nav_share_with_facebook">Share with Facebook</string>
+    <string name="nav_share_with_facebook">Chia sẽ qua Facebook</string>
     <string name="nav_24h_com_vn">24h.com.vn</string>
     <string name="input_full_description">Input full description</string>
     <string name="input_description">Input description</string>
@@ -30,5 +30,6 @@
     <string name="title_activity_show_full_ads">ShowFullAdsActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="nav_rating">Rating</string>
+    <string name="nav_rating">Đánh giá</string>
+    <string name="nav_funny_jokes">Nguồn</string>
 </resources>

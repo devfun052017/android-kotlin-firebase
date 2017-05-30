@@ -20,7 +20,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Author: Simon Lê"
+        android:text="Tác giả: Simon Lê"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#ffffff"
         android:textSize="18sp"/>
