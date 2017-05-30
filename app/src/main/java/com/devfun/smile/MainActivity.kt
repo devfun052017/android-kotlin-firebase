@@ -72,6 +72,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun initAdsView() {
+        if (BuildConfig.DEBUG) {
+            adView.visibility = View.GONE
+            return
+        }
         MobileAds.initialize(this, "ca-app-pub-1212764931474732~9506344803")
         val request = AdRequest.Builder()
                 .build()
@@ -155,8 +159,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onDestroy() {
         adView.destroy()
-
-        startActivity(Intent(applicationContext, ShowFullAdsActivity::class.java))
+        if (!BuildConfig.DEBUG)
+            startActivity(Intent(applicationContext, ShowFullAdsActivity::class.java))
         super.onDestroy()
     }
 }
