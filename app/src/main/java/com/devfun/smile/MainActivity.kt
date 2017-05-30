@@ -106,8 +106,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_feedback -> {
                 AppUtils.instance.sendMail(this)
             }
-            R.id.nav_share -> {
-
+            R.id.nav_rating -> {
+                AppUtils.instance.rating(applicationContext)
             }
         }
 

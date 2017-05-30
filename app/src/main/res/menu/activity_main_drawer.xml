@@ -19,8 +19,8 @@
                 android:id="@+id/nav_feedback"
                 android:title="@string/nav_feedback"/>
             <item
-                android:id="@+id/nav_share"
-                android:title="@string/nav_share_with_facebook"/>
+                android:id="@+id/nav_rating"
+                android:title="@string/nav_rating"/>
         </menu>
     </item>
 </menu>
