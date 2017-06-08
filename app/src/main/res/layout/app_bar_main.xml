@@ -22,7 +22,15 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/appBarmain_textView_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="title"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"/>
                 <android.support.v7.widget.AppCompatImageView
                     android:id="@+id/appBarMain_imageView_addNews"
                     android:layout_width="30dp"

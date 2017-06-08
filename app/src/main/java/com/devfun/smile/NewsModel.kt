@@ -1,5 +1,6 @@
 package com.devfun.smile
 
+import android.support.annotation.Keep
 import java.io.Serializable
 
 /**
@@ -10,6 +11,7 @@ import java.io.Serializable
  * *******************************************
  */
 
+@Keep
 class NewsModel : Serializable{
 
     var title: String? = ""

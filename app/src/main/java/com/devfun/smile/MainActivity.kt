@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
         //
         setupRecyclerView()
-        setTitle("Zing.vn")
+        appBarmain_textView_title.text = "Zing.vn"
         loadNews(mNavSource)
         AppUtils.instance.printHashKey(this)
         //
@@ -96,15 +96,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val id = item.itemId
         when (id) {
             R.id.nav_zing -> {
-                setTitle("Zing.vn")
+                appBarmain_textView_title.text = "Zing.vn"
                 loadNews("zing")
             }
             R.id.nav_express -> {
-                setTitle("VNExpress.net")
+                appBarmain_textView_title.text = "VNExpress.net"
                 loadNews("vnexpress")
             }
             R.id.nav_24h -> {
-                setTitle("24h.com.vn")
+                appBarmain_textView_title.text = "24h.com.vn"
                 loadNews("24h")
             }
             R.id.nav_feedback -> {
