@@ -26,7 +26,7 @@ class ShowFullAdsActivity : AppCompatActivity() {
             return
         }
         mInterstitialAd!!.adUnitId = getString(R.string.ad_interstitial_id)
-        mInterstitialAd!!.loadAd(AdRequest.Builder().build())
+        mInterstitialAd!!.loadAd(AdRequest.Builder().addTestDevice("C96AB204E75D32E0C479250F6DDC97E2").build())
         mInterstitialAd!!.adListener = object : AdListener() {
             override fun onAdLoaded() {
                 super.onAdLoaded()

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1061876202658-nbudidc0q2iq3g96ajms25d65drj37dr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devfun.funnyjokes",
+            "certificate_hash": "9b7272cdb553c3779eae9fb9a4fa0af21454c32b"
+          }
+        },
+        {
           "client_id": "1061876202658-dcs2423gl3s79a287sooej83i6q9aciu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

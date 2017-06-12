@@ -1,6 +1,9 @@
 package com.devfun.smile
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
@@ -10,17 +13,24 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import com.devfun.smile.utils.AppUtils
+import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.MobileAds
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    private val mReceiver: BroadcastReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context?, intent: Intent?) {
+            loadNews(mNavSource)
+        }
+    }
+    private val mIntentFilter: IntentFilter = IntentFilter(AppUtils.instance.mRefreshData)
     private var mRecyclerView: RecyclerView? = null
     private var mAdapter: NewsAdapter? = null
     private var mNavSource: String = "zing";
@@ -50,6 +60,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         AppUtils.instance.printHashKey(this)
         //
         handleAddNews()
+        registerReceiver(mReceiver, mIntentFilter)
     }
 
     private fun handleAddNews() {
@@ -76,9 +87,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             adView.visibility = View.GONE
             return
         }
-        MobileAds.initialize(this, "ca-app-pub-1212764931474732~9506344803")
         val request = AdRequest.Builder()
+                .addTestDevice("C96AB204E75D32E0C479250F6DDC97E2")
                 .build()
+        adView.adListener = object : AdListener() {
+            override fun onAdFailedToLoad(p0: Int) {
+                Log.d("admob", "nAdFailedLoad")
+            }
+        }
         adView.loadAd(request)
     }
 
@@ -158,6 +174,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onDestroy() {
+        unregisterReceiver(mReceiver)
         adView.destroy()
         if (!BuildConfig.DEBUG)
             startActivity(Intent(applicationContext, ShowFullAdsActivity::class.java))

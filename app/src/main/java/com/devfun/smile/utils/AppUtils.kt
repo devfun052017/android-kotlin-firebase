@@ -16,6 +16,7 @@ import java.security.MessageDigest
  * *******************************************
  */
 class AppUtils private constructor() {
+    val mRefreshData: String = "com.devfun.funnyjokes.REFRESH_DATA"
     init {
 
     }
