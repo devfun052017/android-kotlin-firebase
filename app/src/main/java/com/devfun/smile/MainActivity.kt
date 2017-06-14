@@ -19,6 +19,7 @@ import android.view.View
 import com.devfun.smile.utils.AppUtils
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -34,6 +35,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private var mRecyclerView: RecyclerView? = null
     private var mAdapter: NewsAdapter? = null
     private var mNavSource: String = "zing";
+    private var mInterstitialAd: InterstitialAd? = null
+    private var mCountShowFullAdd: Int = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,6 +64,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         //
         handleAddNews()
         registerReceiver(mReceiver, mIntentFilter)
+        mInterstitialAd = InterstitialAd(applicationContext)
+        mInterstitialAd?.adUnitId = getString(R.string.ad_interstitial_id)
+        loadInterstitialAd()
+    }
+
+    private fun loadInterstitialAd() {
+        mInterstitialAd?.loadAd(AdRequest.Builder().build())
+        mInterstitialAd!!.adListener = object : AdListener() {
+            override fun onAdClosed() {
+                super.onAdClosed()
+                mCountShowFullAdd = 0
+                loadInterstitialAd()
+            }
+        }
     }
 
     private fun handleAddNews() {
@@ -88,7 +105,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             return
         }
         val request = AdRequest.Builder()
-                .addTestDevice("C96AB204E75D32E0C479250F6DDC97E2")
                 .build()
         adView.adListener = object : AdListener() {
             override fun onAdFailedToLoad(p0: Int) {
@@ -162,6 +178,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onResume() {
         super.onResume()
         adView.resume()
+        if (mCountShowFullAdd == 5) {
+            mInterstitialAd?.show()
+        }
+        mCountShowFullAdd++
     }
 
     override fun onPause() {
@@ -176,8 +196,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onDestroy() {
         unregisterReceiver(mReceiver)
         adView.destroy()
-        if (!BuildConfig.DEBUG)
-            startActivity(Intent(applicationContext, ShowFullAdsActivity::class.java))
         super.onDestroy()
     }
 }
