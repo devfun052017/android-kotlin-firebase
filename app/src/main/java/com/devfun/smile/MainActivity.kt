@@ -109,6 +109,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         adView.adListener = object : AdListener() {
             override fun onAdFailedToLoad(p0: Int) {
                 Log.d("admob", "nAdFailedLoad")
+                adView.visibility = View.GONE
+            }
+
+            override fun onAdLoaded() {
+                super.onAdLoaded()
+                adView.visibility = View.VISIBLE
             }
         }
         adView.loadAd(request)

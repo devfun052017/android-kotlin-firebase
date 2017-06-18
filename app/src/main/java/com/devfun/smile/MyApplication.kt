@@ -17,7 +17,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         FirebaseApp.initializeApp(this)
-        MobileAds.initialize(this, "ca-app-pub-1212764931474732~9506344803")
+        MobileAds.initialize(this, "ca-app-pub-9086867599454362~8603560139")
     }
 
 
